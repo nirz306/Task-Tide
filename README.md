@@ -1,3 +1,7 @@
+![image](https://github.com/nirz306/Task-Tide/assets/122902068/c757067d-3d62-4854-bcc7-5a6dcdf14ea4)
+![image](https://github.com/nirz306/Task-Tide/assets/122902068/9c585c9d-fe8b-4c6b-abff-95ea82be07d3)
+![image](https://github.com/nirz306/Task-Tide/assets/122902068/f4b11c97-2da2-4835-8d07-e83a64370979)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
