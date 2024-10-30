@@ -8,11 +8,11 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 
-const db = require('./connect'); // Ensure database connection
+const db = require('./connect'); 
 
 
 
-const PORT = process.env.PORT || 3000; // Default to 3000 if not defined
+const PORT = process.env.PORT || 3000;  
 
 
 const app = express();
@@ -33,8 +33,8 @@ app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
 app.use(cookieParser()); // Parse cookies
 
 // Register routes
-app.use("/user", userRoute); // User-related routes (signup, login)
-app.use("/task", taskRoute); // Task-related routes (all routes protected)
+app.use("/user", userRoute);  
+app.use("/task", taskRoute);  
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

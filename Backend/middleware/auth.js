@@ -13,7 +13,7 @@ async function restrictToLoggedinUserOnly(req, res, next) {
 
         if (token.startsWith('Bearer ')) token = token.slice(7).trim();
 
-        // console.log("request user at auth before decoding: ",req.user);
+        
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.user = { _id: decoded.id }; // Set req.user with _id field
         console.log("the token of user at middleware is: ",token);

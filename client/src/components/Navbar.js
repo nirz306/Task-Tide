@@ -29,24 +29,25 @@ const Navbar = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     setIsLoggedIn(false);
-    setName(""); // Reset to default after logout
+    setName("");  
     navigate("/login");
   };
 
   return (
-    <div className="outer flex-row">
-      <div className="inner1 flex items-center p-4 md:space-x-[400px] w-max max-md:space-x-[200px]">
-        <h1 className="text-2xl font-extrabold text-rose-500 font-sans">
+      <div className="flex  w-[500px] md:w-[700px]   mt-10 justify-between   ">
+        <div className="first ">
+          <h1 className="text-2xl font-extrabold text-rose-500 font-sans ">
           Task Tide
         </h1>
-        <div className="links flex space-x-6">
-          <Link to="/" className="relative group">
+        </div>
+        <div className=" second links sm:space-x-4 flex md:space-x-6 ">
+          <Link to="/" className="relative group sm:p-2 ">
             <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
             <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
               Home
             </span>
           </Link>
-          <Link to="/create" className="relative group">
+          <Link to="/create" className="relative group sm:p-2">
             <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
             <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
               New Task
@@ -54,14 +55,14 @@ const Navbar = () => {
           </Link>
 
           {isLoggedIn ? (
-            <Link to="/login" onClick={handleLogout} className="relative group">
+            <Link to="/login" onClick={handleLogout} className="relative group sm:p-2">
               <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
               <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
                 Logout
               </span>
             </Link>
           ) : (
-            <Link to="/login" className="relative group">
+            <Link to="/login" className="relative group sm:p-2">
               <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
               <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
                 Login
@@ -70,7 +71,7 @@ const Navbar = () => {
           )}
 
           {!isLoggedIn ? (
-            <Link to="/signup" className="relative group">
+            <Link to="/signup" className="relative group sm:p-2">
               <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
               <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
                 Sign up
@@ -80,7 +81,7 @@ const Navbar = () => {
 
           <div className="inner2 flex-col items-center">
             <img
-              className="w-4 items-center mx-auto"
+              className="w-4 items-center mx-auto my mt-3"
               src={userIcon}
               alt="User icon"
             />
@@ -90,7 +91,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

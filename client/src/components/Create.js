@@ -36,7 +36,7 @@ const Create = () => {
       navigate('/'); // Redirect to the homepage after successful task addition
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        // Unauthorized error, navigate to login page
+       
         console.error('Unauthorized, redirecting to login:', error.message);
         navigate('/login');
       } 

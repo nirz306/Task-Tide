@@ -1,8 +1,4 @@
- 
-
-
-//relational db between task and user
-const mongoose = require("mongoose");
+ const mongoose = require("mongoose");
 
 // Defining the task schema
 const taskSchema = new mongoose.Schema({
@@ -17,16 +13,15 @@ const taskSchema = new mongoose.Schema({
     },
     priority: {
         type: String,
-        enum: ['low', 'medium', 'high'], // Specifies the allowed values
-        required: [true, 'Task priority is required'], // Makes the field required
-        default: 'medium' // Sets a default value if not provided
+        enum: ['low', 'medium', 'high'],  
+        required: [true, 'Task priority is required'],  
+        default: 'medium'  
     },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "users",
       },
 });
-
-// Creating a task model
+ 
 const Task = mongoose.model('Task', taskSchema);
 module.exports = Task;

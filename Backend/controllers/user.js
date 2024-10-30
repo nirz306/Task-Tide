@@ -4,18 +4,10 @@ const bcrypt = require('bcrypt');
 const { v4: uuidv4 } = require("uuid");
 const cookieParser = require('cookie-parser');
 const saltRounds = 10;
-
-// Middleware for restricted routes
+ 
  require('dotenv').config();
-
-
-
-// module.exports = {
-//     restrictToLoggedinUserOnly
-// };
-
-
-// Signup Handler
+ 
+ 
 async function handleUserSignup(req, res) {
   try {
       const { name, email, password } = req.body;
@@ -55,8 +47,7 @@ async function handleUserSignup(req, res) {
       res.status(500).json({ error: 'Failed to create user' });
   }
 }
-
-// Login Handler
+ 
 async function handleUserLogin(req, res) {
     try {
         const { email, password } = req.body;
@@ -100,7 +91,7 @@ async function handleUserLogin(req, res) {
 }
 
 module.exports = {
-    // restrictToLoggedinUserOnly,
+  
     handleUserSignup,
     handleUserLogin,
 };
