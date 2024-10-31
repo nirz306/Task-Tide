@@ -21,11 +21,7 @@ async function handleGenerateNewTask(req, res) {
         });
       
         await newTask.save();
-        console.log("user at handle generated task before saving is: ",req.user);
-        console.log("task created!!\n")
-
- 
-
+        
         res.status(201).json({
             message: 'Task created successfully',
             taskId: newTask._id
@@ -56,12 +52,7 @@ async function handleDeleteTask(req, res) {
 async function handleGetAllTasks(req,res){
     try {
        
-        const allTasks = await Task.find({ createdBy: req.user._id });
-        
-
-        console.log("Retrieved tasks for user:", req.user._id, allTasks);
-
-        
+        const allTasks = await Task.find({ createdBy: req.user._id });        
         if (allTasks.length === 0) {
             console.log("no tasks");
             return res.status(200).json({ message: 'No tasks available for this user', tasks: [] });
@@ -79,6 +70,7 @@ async function handleGetAllTasks(req,res){
 async function handleGetSpecifiedTask(req,res){
     try{
         const taskId = req.params.id;
+        console.log("task id in handle specified task: ",taskId);
         const specificTask = await Task.findById(taskId);
 
         if(!specificTask)

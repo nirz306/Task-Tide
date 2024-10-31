@@ -16,8 +16,7 @@ async function restrictToLoggedinUserOnly(req, res, next) {
         
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.user = { _id: decoded.id }; // Set req.user with _id field
-        console.log("the token of user at middleware is: ",token);
-        console.log("request user at auth: ",req.user);
+         
         next();
     } catch (error) {
         console.error("Token verification error:", error);

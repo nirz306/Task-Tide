@@ -49,7 +49,7 @@ const Create = () => {
   };
 
   return (
-    <div className="flex flex-col create mx-auto justify-center items-center mt-[100px]">
+    <div className="flex flex-col create mx-auto justify-center items-center mt-[80px]">
       <h2 className="text-rose-500 font-bold text-[30px]">Add a new task</h2>
       <form onSubmit={handleSubmit} className="mt-5 max-w-[800px] w-[100%]">
         <div className="pb-3">

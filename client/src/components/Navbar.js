@@ -41,13 +41,13 @@ const Navbar = () => {
         </h1>
         </div>
         <div className=" second links sm:space-x-4 flex md:space-x-6 ">
-          <Link to="/" className="relative group sm:p-2 ">
+          <Link to="/" className="relative group sm:p-2 lg:p-0 lg:mt-3">
             <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
             <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
               Home
             </span>
           </Link>
-          <Link to="/create" className="relative group sm:p-2">
+          <Link to="/create" className="relative group sm:p-2 lg:p-0 lg:mt-3">
             <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
             <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
               New Task
@@ -55,14 +55,14 @@ const Navbar = () => {
           </Link>
 
           {isLoggedIn ? (
-            <Link to="/login" onClick={handleLogout} className="relative group sm:p-2">
+            <Link to="/login" onClick={handleLogout} className="relative group sm:p-2 lg:p-0 lg:mt-3">
               <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
               <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
                 Logout
               </span>
             </Link>
           ) : (
-            <Link to="/login" className="relative group sm:p-2">
+            <Link to="/login" className="relative group sm:p-2 lg:p-0 lg:mt-3">
               <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
               <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
                 Login
@@ -71,7 +71,7 @@ const Navbar = () => {
           )}
 
           {!isLoggedIn ? (
-            <Link to="/signup" className="relative group sm:p-2">
+            <Link to="/signup" className="relative group sm:p-2 lg:p-0 lg:mt-3">
               <span className="absolute inset-0 transition-transform transform scale-0 bg-rose-500 rounded-lg group-hover:scale-125"></span>
               <span className="relative z-10 transition-colors group-hover:text-white font-semibold">
                 Sign up
